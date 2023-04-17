@@ -1,0 +1,19 @@
+{
+  "name": "bisola-widlin",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "nuxt": "^3.3.3"
+  },
+  "dependencies": {
+    "wavesurfer.js": "^6.6.3"
+  }
+}
