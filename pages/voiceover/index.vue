@@ -1,22 +1,22 @@
 <template>
   <main class="text-white">
-    <div class="w-full lg:w-10/12 mx-auto mail--law px-8 md:px-24 overflow-hidden">
+    <div class="w-full lg:w-10/12 mx-auto mail--law px-8 md:px-24 overflow-y-scroll lg:overflow-hidden">
       <navbar/>
-      <div class="flex flex-row">
+      <div class="flex flex-col lg:flex-row">
         <div>
           <section class="body mt-4 flex flex-row justify-center items-center">
             <div class="flex flex-col items-center">
               <p class="mb-1 text-xs bg-white rounded-full text-black p-2">
                 🎙️Voiceover
               </p>
-              <p class="w-2/3 mt-2 text-center text-3xl md:text-6xl font-gambetta">Use the best voice possible to engage
+              <p class="w-full lg:w-2/3 mt-2 text-center text-3xl md:text-6xl font-gambetta">Use the best voice possible to engage
                 your
                 audience.</p>
               <button @click="play" class="bg-amber-50 hover:bg-amber-100 px-12 py-3 rounded mt-8 text-black">Listen
               </button>
             </div>
           </section>
-          <section class="flex flex-row justify-between items-start">
+          <section class="hidden lg:flex flex-row justify-between items-start">
             <div class="flex flex-col items-start text-left mr-8">
           <span class="flex flex-row bg-amber-50 bg-opacity-50 mb-2">
             <span class="p-2 bg-amber-50 text-black">Contact Us</span>
@@ -37,9 +37,11 @@
           <span class="uppercase text-xs mb-1">Corporate Voiceover</span>
           <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :options="waveSurferOption"/>
           <span class="text-xs mt-1">Welcome to our company</span>
-          <button @click="toggleShowMore" class="uppercase text-xs underline self-start mt-2">View More</button>
+          <button @click="toggleShowMore" class="uppercase text-xs underline self-start mt-2">View {{
+              showMore ? 'Less' : 'More'
+            }}</button>
           <div v-if="showMore">
-            <ul class="flex flex-col mt-4 max-h-64 overflow-y-auto">
+            <ul class="flex flex-col mt-4 mb-4 max-h-64 overflow-y-auto">
               <li v-for="audioFile in audioFiles" :key="audioFile.name" class="mr-4 flex flex-col mb-3">
                 <span class="flex flex-row mb-1">
                   <img src="/voiceover/audio-wave.svg" alt="Audio Wave">
@@ -63,6 +65,14 @@ import WaveSurf from "~/pages/voiceover/components/WaveSurf.vue";
 
 const showMore = ref(false);
 
+const props = defineProps({
+  slice: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+});
+
 const waveSurferOption = {
   height: 80,
   progressColor: '#FCEDD0',
@@ -79,7 +89,7 @@ const waveSurferOption = {
 
 const refWaveSurfer = ref(null);
 
-const audioFiles = Array.from({length: 10}, (_, i) => ({
+const audioFiles = Array.from({length: 3}, (_, i) => ({
   name: `Audio Sample ${i + 1}`,
   src: `/voiceover/audio/a${i + 1}.mp3`,
   date: 'Tue, 01 Jun 2023'
@@ -106,6 +116,9 @@ function toggleShowMore() {
 <style scoped>
 main {
   background: black;
+  /*clip-path: inset(0 30% 0 0);*/
+  /*width: 70%;*/
+  /*overflow-x: hidden !important;*/
 }
 
 .mail--law {

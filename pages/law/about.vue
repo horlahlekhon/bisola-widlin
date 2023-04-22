@@ -1,14 +1,15 @@
 <template>
   <main class="text-amber-900 w-full lg:w-10/12 mx-auto mail--law px-8 md:px-24 overflow-hidden">
-    <navbar logo="black" text-color="text-black"/>
+    <navbar logo="black" text-color="text-white"/>
 
-    <section class="text-center w-4/6 mx-auto flex flex-col mt-40 items-center font-gambetta">
+    <section class="text-center w-5/6 lg:w-4/6 mx-auto flex flex-col mt-16 lg:mt-40 items-center font-gambetta">
       <span class="border border-amber-900 rounded-full w-fit p-2 text-xs text-black font-sans">☺️About Me</span>
-      <p class="mt-8 text-lg">BISOLA WIDLIN is a professional legal professional who specializes in the area of intellectual
+      <p class="mt-8 text-lg text-justify lg:text-center">BISOLA WIDLIN is a professional legal professional who specializes in the area of
+        intellectual
         property law. IP
         law covers a broad range of legal issues related to protecting the rights of creators and owners of intellectual
         property, such as patents, trademarks, copyrights, and trade secrets.</p>
-      <p class="mt-8 text-lg">
+      <p class="mt-8 text-lg text-justify lg:text-center">
         My responsibilities may include advising clients on the legal aspects of protecting and managing their
         intellectual property, drafting and negotiating contracts related to IP, filing and prosecuting patent and
         trademark applications, defending clients against claims of infringement, and representing clients in litigation
@@ -20,8 +21,8 @@
       <h2 id="services" class="text-5xl">Services</h2>
       <div class="flex flex-col items-center mt-12">
         <div v-for="service in services" :key="service.title" class="w-full mb-8">
-          <p class="text-lg">
-            <span class="text-xl font-bold capitalize">{{ service.title }}:</span>
+          <p class="text-lg text-justify lg:text-center">
+            <span class="text-lg lg:text-xl font-bold capitalize">{{ service.title }}:</span>
             <span>{{ service.description }}</span></p>
         </div>
       </div>

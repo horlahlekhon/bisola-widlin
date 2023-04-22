@@ -7,16 +7,17 @@
           <p class="mb-1 text-xs bg-white rounded-full text-black p-2">
             💰NGO
           </p>
-          <p class="w-3/4 mt-2 text-center text-3xl md:text-6xl font-gambetta">Spreading the love of God through giving, inspiring and
+          <p class="w-full lg:w-3/4 mt-2 text-center text-3xl md:text-6xl font-gambetta">Spreading the love of God
+            through giving, inspiring and
             motivating the people within our reach</p>
           <a href="#" class="bg-green-600 hover:bg-green-700 px-12 py-3 rounded mt-8">Donate</a>
         </div>
       </section>
-      <section class="flex flex-row justify-start items-start">
-        <div class="flex flex-col items-start text-left mr-8">
-          <span class="flex flex-row bg-green-700 bg-opacity-50">
-            <span class="p-2 bg-green-700">Contact Us</span>
-            <span class="text-xs w-[175px]">&nbsp;</span>
+      <section class="flex flex-col flex-col-reverse lg:flex-row justify-start items-start">
+        <div class="flex flex-col items-start text-left mr-0  lg:mr-8 w-full lg:w-fit mb-8 lg:mb-0">
+          <span class="flex flex-row bg-green-700 bg-opacity-50 w-full">
+            <span class="p-2 bg-green-700 w-fit">Contact Us</span>
+            <span class="text-xs w-full lg:w-[175px]">&nbsp;</span>
           </span>
           <span>Abuja, Abuja FCT, NG</span>
           <span>BisolaWidlin@gmail.com</span>
@@ -27,18 +28,18 @@
             <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
           </span>
         </div>
-        <div class="bg-black bg-opacity-70 flex flex-row p-12 h-52">
-          <div class="flex flex-col justify-center items-center w-48 border-r-2 border-white">
-            <span class="text-6xl">5</span>
-            <span class="mt-4">Volunteers</span>
+        <div class="bg-black bg-opacity-70 flex flex-row p-4 lg:p-12 h-32 lg:h-52 mb-8 lg:mb-0 w-full lg:w-fit">
+          <div class="flex flex-col justify-center items-center w-1/3 lg:w-48 border-r-2 border-white">
+            <span class="text-3xl lg:text-6xl">5</span>
+            <span class="mt-4 text-sm lg:text-base">Volunteers</span>
           </div>
-          <div class="flex flex-col justify-center items-center w-56 border-r-2 border-white">
-            <span class="text-6xl">2M</span>
-            <span class="mt-4">Donations <br> Received</span>
+          <div class="flex flex-col justify-center items-center w-1/3 lg:w-56 border-r-2 border-white">
+            <span class="text-3xl lg:text-6xl">2M</span>
+            <span class="mt-4 text-sm lg:text-base">Donations <br> Received</span>
           </div>
-          <div class="flex flex-col justify-center items-center w-48">
-            <span class="text-6xl">7+</span>
-            <span class="mt-4">Active <br> Campaign</span>
+          <div class="flex flex-col justify-center items-center w-1/3 lg:w-48">
+            <span class="text-3xl lg:text-6xl">7+</span>
+            <span class="mt-4 text-sm lg:text-base">Active <br> Campaign</span>
           </div>
         </div>
       </section>

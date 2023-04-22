@@ -1,7 +1,7 @@
 <template>
   <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
     <div class="flex flex-row justify-between items-center w-full lg:w-fit">
-      <nuxt-link to="/law">
+      <nuxt-link to="/law/">
         <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'" alt="Widlin Logo"
              class="cursor-pointer"/>
       </nuxt-link>
@@ -17,21 +17,23 @@
     </div>
     <div class="hidden lg:flex flex-row lg:items-center lg:w-fit">
       <nav class="mx-auto w-full">
-        <nuxt-link to="about" class="nav-item" :class="textColor">About Me</nuxt-link>
-        <nuxt-link to="services" class="nav-item ml-12" :class="textColor">Services</nuxt-link>
+        <nuxt-link to="/law/about" class="nav-item" :class="textColor">About Me</nuxt-link>
+        <nuxt-link to="/law/services" class="nav-item ml-12" :class="textColor">Services</nuxt-link>
         <a href="#" class="bg-amber-100 hover:bg-amber-200 px-12 py-3 ml-16 text-black rounded">Hire Me</a>
       </nav>
     </div>
-    <div class="flex flex-col lg:hidden lg:w-auto bg-white bg-opacity-10 absolute top-20 right-0"
-         :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }">
+    <div class="flex flex-col lg:hidden lg:w-auto bg-opacity-10 absolute top-20 right-0"
+         :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen,  'bg-black bg-opacity-50': logo ==='black', 'bg-white': logo !=='black' }">
       <nav class="mx-auto flex flex-col min-w-[300px]">
-        <nuxt-link to="about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">About
+        <nuxt-link to="/law/about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">
+          About
           Me
         </nuxt-link>
-        <nuxt-link to="services" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">
+        <nuxt-link to="/law/services" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
+                   :class="textColor">
           Services
         </nuxt-link>
-        <a href="#" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10">Hire Me</a>
+        <a href="#" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">Hire Me</a>
       </nav>
     </div>
   </nav>

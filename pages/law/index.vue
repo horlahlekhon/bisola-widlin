@@ -5,7 +5,8 @@
       <section class="body mt-4 flex flex-row justify-center items-center">
         <div class="flex flex-col items-center">
           <p class="mb-1 text-xs bg-white rounded-full text-black p-2">Law and Justice</p>
-          <p class="w-[90%] mt-8 text-center text-6xl md:text-7xl font-gambetta uppercase">Intellectual Property Law</p>
+          <p class="w-[90%] mt-8 text-center text-3xl lg:text-6xl md:text-7xl font-gambetta uppercase">Intellectual
+            Property <br> Law</p>
         </div>
       </section>
     </div>

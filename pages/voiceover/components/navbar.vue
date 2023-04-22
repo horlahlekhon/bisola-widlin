@@ -1,7 +1,7 @@
 <template>
   <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
     <div class="flex flex-row justify-between items-center w-full lg:w-fit">
-      <nuxt-link to="/voiceover">
+      <nuxt-link to="/voiceover/">
         <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'" alt="Widlin Logo"
              class="cursor-pointer"/>
       </nuxt-link>
@@ -28,8 +28,8 @@
         <nuxt-link to="about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">About
           Me
         </nuxt-link>
-        <nuxt-link to="services" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">
-          Services
+        <nuxt-link to="demo" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">
+          Demo
         </nuxt-link>
         <a href="#" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10">Hire Me</a>
       </nav>
