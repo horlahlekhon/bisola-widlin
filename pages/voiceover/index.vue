@@ -95,11 +95,18 @@ const waveSurferOption = {
 
 const refWaveSurfer = ref(null);
 
-const audioFiles = Array.from({length: 3}, (_, i) => ({
-    name: `Audio Sample ${i + 1}`,
-    src: `/voiceover/audio/a${i + 1}.mp3`,
-    date: 'Tue, 01 Jun 2023'
-}));
+const audioFiles = [
+    {
+        name: `The Voice of Bisola`,
+        src: `/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
+        date: 'Tue, 01 May 2023'
+    },
+    {
+        name: `The Book of Jonah`,
+        src: `/voiceover/audio/THE BOOK OF JONAH.mp3`,
+        date: 'Tue, 01 May 2023'
+    }
+]
 
 let selectedAudioFile = audioFiles[0];
 const isPlaying = ref(false);
