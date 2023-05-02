@@ -1,76 +1,89 @@
 <template>
-  <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
-    <div class="flex flex-row justify-between items-center w-full lg:w-fit">
-      <nuxt-link to="/law/">
-        <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'" alt="Widlin Logo"
-             class="cursor-pointer"/>
-      </nuxt-link>
-      <div class="flex lg:hidden">
-        <button class="navbar-burger flex items-center py-2 px-3 text-amber-100 hover:text-amber-200"
-                @click="toggleMenu">
-          <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>
-            Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="hidden lg:flex flex-row lg:items-center lg:w-fit">
-      <nav class="mx-auto w-full">
-        <nuxt-link to="/law/about" class="nav-item" :class="textColor">About Me</nuxt-link>
-        <nuxt-link to="/law/services" class="nav-item ml-12" :class="textColor">Services</nuxt-link>
-        <a href="#" class="bg-amber-100 hover:bg-amber-200 px-12 py-3 ml-16 text-black rounded">Hire Me</a>
-      </nav>
-    </div>
-    <div class="flex flex-col lg:hidden lg:w-auto bg-opacity-10 absolute top-20 right-0"
-         :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen,  'bg-black bg-opacity-50': logo ==='black', 'bg-white': logo !=='black' }">
-      <nav class="mx-auto flex flex-col min-w-[300px]">
-        <nuxt-link to="/law/about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">
-          About
-          Me
-        </nuxt-link>
-        <nuxt-link to="/law/services" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
-                   :class="textColor">
-          Services
-        </nuxt-link>
-        <a href="#" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor">Hire Me</a>
-      </nav>
-    </div>
-  </nav>
+    <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
+        <div class="flex flex-row justify-between items-center w-full lg:w-fit">
+            <nuxt-link to="/law/">
+                <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'"
+                     alt="Widlin Logo"
+                     class="cursor-pointer"/>
+            </nuxt-link>
+            <div class="flex lg:hidden">
+                <button class="navbar-burger flex items-center py-2 px-3 text-amber-100 hover:text-amber-200"
+                        @click="toggleMenu">
+                    <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>
+                        Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="hidden lg:flex flex-row lg:items-center lg:w-fit">
+            <nav class="mx-auto w-full">
+                <nuxt-link to="/law#about" class="nav-item" :class="textColor">About Me</nuxt-link>
+                <nuxt-link to="/law#services" class="nav-item ml-12" :class="textColor">Services</nuxt-link>
+                <nuxt-link v-if="!isPreview"
+                        to="mailto:bisolawidlin@gmail.com?subject=Inquiry%20About%20Legal%20Services%20and%20Availability"
+                        class="bg-amber-100 hover:bg-amber-200 px-12 py-3 ml-16 text-black rounded">Hire Me
+                </nuxt-link>
+            </nav>
+        </div>
+        <div class="flex flex-col lg:hidden lg:w-auto bg-opacity-10 absolute top-20 right-0"
+             :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen,  'bg-black bg-opacity-50': logo ==='black', 'bg-white': logo !=='black' }">
+            <nav class="mx-auto flex flex-col min-w-[300px]">
+                <nuxt-link to="/law#about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
+                           :class="textColor">
+                    About
+                    Me
+                </nuxt-link>
+                <nuxt-link to="/law#services" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
+                           :class="textColor">
+                    Services
+                </nuxt-link>
+                <nuxt-link v-if="!isPreview" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10" :class="textColor"
+                           to="mailto:bisolawidlin@gmail.com?subject=Inquiry%20About%20Legal%20Services%20and%20Availability">
+                    Hire
+                    Me
+                </nuxt-link>
+            </nav>
+        </div>
+    </nav>
 </template>
 
 <script>
 export default {
-  name: "navbar",
-  props: {
-    textColor: {
-      type: String,
-      default: "text-white"
+    name: "navbar",
+    props: {
+        textColor: {
+            type: String,
+            default: "text-white"
+        },
+        logo: {
+            type: String,
+            default: "white"
+        },
+        isPreview: {
+            type: Boolean,
+            default: false
+        }
     },
-    logo: {
-      type: String,
-      default: "white"
+    data() {
+        return {
+            isMenuOpen: false
+        }
+    },
+    methods: {
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen
+        }
     }
-  },
-  data() {
-    return {
-      isMenuOpen: false
-    }
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    }
-  }
 }
 </script>
 
 <style scoped>
 .bg-primary {
-  background: #FCEDD0;
+    background: #FCEDD0;
 }
 
 .text-primary {
-  color: #FCEDD0;
+    color: #FCEDD0;
 }
 </style>
