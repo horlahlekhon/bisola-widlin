@@ -6,11 +6,12 @@
                 <div class="flex flex-col items-center">
                     <p class="mb-1 text-xs bg-white rounded-full text-black p-2">Law and Justice</p>
                     <p class="w-[90%] mt-8 text-center text-3xl lg:text-6xl md:text-7xl font-gambetta uppercase">
-                        Intellectual Property  Law</p>
+                        Intellectual Property Law</p>
                 </div>
             </section>
         </div>
-        <section class="text-center w-5/6 lg:w-4/6 mx-auto flex flex-col mt-16 lg:mt-40 items-center font-gambetta about text-amber-900">
+        <section
+                class="text-center w-5/6 lg:w-4/6 mx-auto flex flex-col mt-16 lg:mt-40 items-center font-gambetta about text-amber-900">
             <span class="border border-amber-900 rounded-full w-fit p-2 text-xs text-black font-sans" id="about">☺️About Me</span>
             <p class="mt-8 text-lg text-justify lg:text-center">BISOLA WIDLIN is a professional legal professional
                 who specializes in the area of
@@ -79,13 +80,15 @@ export default {
                 }
             ]
         }
-    }
+    },
 }
 </script>
 
 <style scoped>
 main {
     background: white;
+    /*background: rgb(255,255,255);*/
+    /*background: linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(41,41,43,1) 100%);*/
 }
 
 .mail--law {
@@ -112,7 +115,7 @@ main {
     padding-bottom: 10rem;
 }
 
-.about{
+.about {
     background: white;
 }
 </style>

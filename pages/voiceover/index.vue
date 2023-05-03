@@ -1,8 +1,10 @@
 <template>
     <main class="text-white">
-        <div class="w-full lg:w-10/12 mx-auto mail--law px-8 md:px-24 overflow-y-scroll lg:overflow-hidden">
-            <navbar/>
-            <div class="flex flex-col lg:flex-row">
+        <div class="w-full mx-auto mail--law px-8 md:px-24 overflow-y-scroll lg:overflow-hidden">
+            <div class="w-full lg:w-10/12 mx-auto">
+                <navbar/>
+            </div>
+            <div class="flex flex-col lg:flex-row mx-auto w-full lg:w-10/12">
                 <div>
                     <section class="body mt-4 flex flex-row justify-center items-center">
                         <div class="flex flex-col items-center">
@@ -16,7 +18,13 @@
                             <button @click="play"
                                     class="bg-amber-50 hover:bg-amber-100 px-12 py-3 rounded mt-8 text-black">
                                 <span v-if="!isPlaying">Listen</span>
-                                <img src="/voiceover/playing.gif" alt="Playing" class="bg-transparent" v-else>
+                                <span class="bg-amber-50 boxContainer" v-else>
+                                    <span class="box box1 bg-amber-50"></span>
+                                    <span class="box box2 bg-amber-50"></span>
+                                    <span class="box box3 bg-amber-50"></span>
+                                    <span class="box box4 bg-amber-50"></span>
+                                    <span class="box box5 bg-amber-50"></span>
+                                </span>
                             </button>
                         </div>
                     </section>
@@ -45,7 +53,7 @@
                         showMore ? 'Less' : 'More'
                         }}
                     </button>
-                    <div v-if="showMore">
+                    <div id="more">
                         <ul class="flex flex-col mt-4 mb-4 max-h-64 overflow-y-auto">
                             <li v-for="audioFile in audioFiles" :key="audioFile.name" class="mr-4 flex flex-col mb-3">
                 <span class="flex flex-row mb-1">
@@ -133,14 +141,32 @@ function selectAudioFile(audioFile) {
 }
 
 function toggleShowMore() {
+    const moreEl = document.querySelector('#more');
+
+    if (showMore.value) {
+        moreEl.classList.remove('show');
+    } else {
+        moreEl.classList.add('show');
+    }
+
     showMore.value = !showMore.value;
 }
 
 </script>
 
 <style scoped>
+#more {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#more.show {
+    max-height: 500px; /* set the maximum height of the element */
+}
+
 main {
-    background: black;
+    background: #080808;
     /*clip-path: inset(0 30% 0 0);*/
     /*width: 70%;*/
     /*overflow-x: hidden !important;*/
@@ -168,5 +194,81 @@ main {
     height: calc(100vh - 295px);
     padding-top: 10rem;
     padding-bottom: 10rem;
+}
+
+@keyframes quiet {
+    25%{
+        transform: scaleY(.6);
+    }
+    50%{
+        transform: scaleY(.4);
+    }
+    75%{
+        transform: scaleY(.8);
+    }
+}
+
+@keyframes normal {
+    25%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(.4);
+    }
+    75%{
+        transform: scaleY(.6);
+    }
+}
+@keyframes loud {
+    25%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(.4);
+    }
+    75%{
+        transform: scaleY(1.2);
+    }
+}
+
+.boxContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 28px;
+    --boxSize: 8px;
+    --gutter: 4px;
+    width: calc((var(--boxSize) + var(--gutter)) * 5);
+    background: rgb(255 251 235 / 50%);
+}
+
+.box{
+    transform: scaleY(.4);
+    height: 100%;
+    width: 3px;
+    background: black;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    border-radius: 8px;
+}
+
+.box1{
+    animation-name: quiet;
+}
+
+.box2{
+    animation-name: normal;
+}
+
+.box3{
+    animation-name: quiet;
+}
+
+.box4{
+    animation-name: loud;
+}
+
+.box5{
+    animation-name: quiet;
 }
 </style>

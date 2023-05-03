@@ -2,18 +2,11 @@
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-        '@morev/vue-transitions/nuxt',
     ],
     tailwindcss: {
         cssPath: '~/tailwind.css',
     },
-    vueTransitions: {
-        // transitions: [
-        //     {
-        //         name: 'slide',
-        //         mode: 'out-in',
-        //         duration: 300,
-        //     },
-        // ],
-    }
+    css: [
+        '~/assets/main.css',
+    ]
 })

@@ -18,7 +18,7 @@
         </div>
         <div class="hidden lg:flex flex-row lg:items-center lg:w-fit">
             <nav class="mx-auto w-full">
-                <nuxt-link to="about" class="nav-item" :class="textColor">About Me</nuxt-link>
+                <nuxt-link to="/ngo/about" class="nav-item" :class="textColor">About Me</nuxt-link>
                 <!--        <nuxt-link to="services" class="nav-item ml-12" :class="textColor">Services</nuxt-link>-->
                 <a v-if="!isPreview" href="#" class="bg-green-600 hover:bg-green-700 px-12 py-3 ml-16 rounded">Donate
                     Now</a>
@@ -27,7 +27,7 @@
         <div class="flex flex-col lg:hidden lg:w-auto bg-white bg-opacity-10 absolute top-20 right-0"
              :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }">
             <nav class="mx-auto flex flex-col min-w-[300px]">
-                <nuxt-link to="about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
+                <nuxt-link to="/ngo/about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
                            :class="textColor">About
                     Me
                 </nuxt-link>

@@ -79,6 +79,10 @@ export default {
 </script>
 
 <style scoped>
+html {
+    scroll-behavior: smooth;
+}
+
 .bg-primary {
     background: #FCEDD0;
 }
