@@ -39,8 +39,15 @@
                             <span>+234 813 489 3527</span>
                             <span>+234 812 575 7578</span>
                             <span class="mt-2 flex flex-row">
-            <img src="/shared/icons/instagram.svg" alt="Instagram" class="mr-2"/>
-            <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
+           <a href="https://www.instagram.com/bisola_widlin/" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/instagram.svg" alt="Instagram" class="mr-2"/>
+            </a>
+            <a href="https://twitter.com/BisolaWidlin" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
+            </a>
+            <a href="https://www.youtube.com/@CANTORANDTHEWORD" target="_blank" class="mr-2">
+              <img src="/shared/icons/icons8-youtube-50.png" alt="Youtube" class="mr-2 h-8"/>
+            </a>
           </span>
                         </div>
                     </section>
@@ -113,6 +120,26 @@ const audioFiles = [
         name: `The Book of Jonah`,
         src: `/voiceover/audio/THE BOOK OF JONAH.mp3`,
         date: 'Tue, 01 May 2023'
+    },
+    {
+        name: 'Intro',
+        src: '/voiceover/audio/intro.mov',
+        date: 'Tue, 01 May 2023'
+    },
+    {
+        name: 'Outro',
+        src: '/voiceover/audio/outro.mov',
+        date: 'Tue, 01 May 2023'
+    },
+    {
+        name: 'Different Voices',
+        src: '/voiceover/audio/different voices.mov',
+        date: 'Tue, 01 May 2023'
+    },
+    {
+        name: 'Why choose us',
+        src: '/voiceover/audio/why choose us.mov',
+        date: 'Tue, 01 May 2023'
     }
 ]
 
@@ -151,6 +178,14 @@ function toggleShowMore() {
 
     showMore.value = !showMore.value;
 }
+
+//after view is initialized play the audio
+onMounted(() => {
+    setTimeout(() => {
+        refWaveSurfer.value.waveSurfer.play();
+        isPlaying.value = true;
+    }, 1000);
+})
 
 </script>
 
@@ -197,41 +232,42 @@ main {
 }
 
 @keyframes quiet {
-    25%{
+    25% {
         transform: scaleY(.6);
     }
-    50%{
+    50% {
         transform: scaleY(.4);
     }
-    75%{
+    75% {
         transform: scaleY(.8);
     }
 }
 
 @keyframes normal {
-    25%{
+    25% {
         transform: scaleY(1);
     }
-    50%{
+    50% {
         transform: scaleY(.4);
     }
-    75%{
+    75% {
         transform: scaleY(.6);
     }
 }
+
 @keyframes loud {
-    25%{
+    25% {
         transform: scaleY(1);
     }
-    50%{
+    50% {
         transform: scaleY(.4);
     }
-    75%{
+    75% {
         transform: scaleY(1.2);
     }
 }
 
-.boxContainer{
+.boxContainer {
     display: flex;
     justify-content: space-between;
     height: 28px;
@@ -241,7 +277,7 @@ main {
     background: rgb(255 251 235 / 50%);
 }
 
-.box{
+.box {
     transform: scaleY(.4);
     height: 100%;
     width: 3px;
@@ -252,23 +288,23 @@ main {
     border-radius: 8px;
 }
 
-.box1{
+.box1 {
     animation-name: quiet;
 }
 
-.box2{
+.box2 {
     animation-name: normal;
 }
 
-.box3{
+.box3 {
     animation-name: quiet;
 }
 
-.box4{
+.box4 {
     animation-name: loud;
 }
 
-.box5{
+.box5 {
     animation-name: quiet;
 }
 </style>

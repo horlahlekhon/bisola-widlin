@@ -11,7 +11,7 @@
         </div>
         <div class="section section-2" ref="section2" @click="expandSection(2)" @mouseenter="expandSection(2)"
              @mouseleave="resetSections">
-            <nuxt-link to="/law" class="content" v-if="activeSection===2">
+            <nuxt-link to="/law#" class="content" v-if="activeSection===2">
                 <law-preview/>
             </nuxt-link>
             <div class="content" v-else>
@@ -37,6 +37,7 @@ import NgoPreview from "~/pages/ngo/components/ngo-preview.vue";
 
 export default {
     components: {NgoPreview, VoiceoverPreview, LawPreview},
+    transition: 'home',
     data() {
         return {
             activeSection: null
@@ -74,7 +75,7 @@ export default {
                 if (index === 1) {
                     this.$router.push('/voiceover')
                 } else if (index === 2) {
-                    this.$router.push('/law')
+                    this.$router.push('/law#')
                 } else if (index === 3) {
                     this.$router.push('/ngo')
                 }
@@ -98,6 +99,15 @@ export default {
 </script>
 
 <style scoped>
+
+.home-enter-active, .home-leave-active {
+    transition: opacity 2s;
+}
+
+.home-enter, .home-leave-active {
+    opacity: 0;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -118,6 +128,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #424242;
+    width: 33.33%;
 }
 
 .section:hover {
@@ -141,11 +152,13 @@ export default {
 
 .section-2 {
     background-image: url('/shared/law.png');
+    transition: all 0.5s ease-in-out;
 }
 
 .section-3 {
     background-image: url('/shared/ngo.png');
     background-size: contain;
+    background-position: right;
 }
 
 .content {

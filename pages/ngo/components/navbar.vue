@@ -1,7 +1,7 @@
 <template>
     <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
         <div class="flex flex-row justify-between items-center w-full lg:w-fit">
-            <nuxt-link to="/ngo">
+            <nuxt-link :to="$route.fullPath === '/ngo/' || $route.fullPath === '/ngo' ? '/': '/ngo'">
                 <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'"
                      alt="Widlin Logo"
                      class="cursor-pointer"/>

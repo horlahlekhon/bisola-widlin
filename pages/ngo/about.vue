@@ -26,7 +26,7 @@
                             They may also
                             focus on advocacy, research, and awareness-raising activities related to their issue areas.
                         </p>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 px-5 py-4 rounded-md mt-8">Become a
+                        <a href="https://wa.me/+2349061156905?text=Cantor%20and%20the%20word%20foundation%20-%20I%20would%20like%20to%20become%20a%20partner%20to%20help%20address%20social%2C%20environmental%2C%20and%20humanitarian%20issues%20with%20the%20help%20of%20our%20Lord%20Jesus%20Christ." target="_blank" class="bg-green-600 hover:bg-green-700 px-5 py-4 rounded-md mt-8">Become a
                             Partner</a>
                     </div>
                     <div class="w-2/5 hidden lg:flex flex-row justify-end m-4">

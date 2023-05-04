@@ -1,7 +1,7 @@
 <template>
     <nav class="pt-2 flex flex-col lg:flex-row justify-between items-center w-full relative">
         <div class="flex flex-row justify-between items-center w-full lg:w-fit">
-            <nuxt-link to="/voiceover/">
+            <nuxt-link :to="$route.fullPath === '/voiceover/' || $route.fullPath === '/voiceover' ? '/': '/voiceover'">
                 <img :src="logo=== 'black' ? '/shared/icons/widling-black.svg' : '/shared/icons/widlin.svg'"
                      alt="Widlin Logo"
                      class="cursor-pointer"/>
@@ -18,18 +18,19 @@
         </div>
         <div class="hidden lg:flex flex-row lg:items-center lg:w-fit">
             <nav class="mx-auto w-full">
-                <nuxt-link to="about" class="nav-item" :class="textColor">About Me</nuxt-link>
+                <nuxt-link to="/voiceover/about" class="nav-item" :class="textColor">About Me</nuxt-link>
                 <!--                <nuxt-link to="demo" class="nav-item ml-12" :class="textColor">Demo</nuxt-link>-->
                 <nuxt-link v-if="!isPreview"
-                        to="mailto:bisolawidlin@gmail.com?subject=Inquiry%20About%20Voiceover%20Services%20and%20Rates"
-                        class="bg-amber-50 hover:bg-amber-100 px-12 py-3 ml-16 rounded text-black">Invite to Job
+                           to="https://wa.me/1234567890?text=BISOLA%20WIDLIN%20-%20I%20am%20interested%20in%20inviting%20you%20to%20provide%20voice%20over%20services%20for%20my%20project.%20I%20understand%20that%20you%20provide%20voice%20overs%20for%20commercials%2C%20e-learning%2C%20audio%20ebooks%2C%20animations%2C%20movie%20trailers%20and%20documentaries.%20I%20appreciate%20that%20you%20value%20timely%20delivery%20without%20compromising%20on%20quality.%20I%20will%20make%20sure%20to%20check%20your%20Audio%20Demo%20page%20for%20voice%20samples.%20Please%20let%20me%20know%20how%20to%20proceed%20with%20scheduling%20a%20job%20with%20you.%20Thanks!"
+                           target="_blank"
+                           class="bg-amber-50 hover:bg-amber-100 px-12 py-3 ml-16 rounded text-black">Invite to Job
                 </nuxt-link>
             </nav>
         </div>
         <div class="flex flex-col lg:hidden lg:w-auto bg-white bg-opacity-10 absolute top-20 right-0"
              :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }">
             <nav class="mx-auto flex flex-col min-w-[300px]">
-                <nuxt-link to="about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
+                <nuxt-link to="/voiceover/about" class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10"
                            :class="textColor">About
                     Me
                 </nuxt-link>
@@ -38,8 +39,9 @@
                 <!--                    Demo-->
                 <!--                </nuxt-link>-->
                 <nuxt-link v-if="!isPreview"
-                        to="mailto:bisolawidlin@gmail.com?subject=Inquiry%20About%20Voiceover%20Services%20and%20Rates"
-                        class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10">Hire Me
+                           to="https://wa.me/1234567890?text=BISOLA%20WIDLIN%20-%20I%20am%20interested%20in%20inviting%20you%20to%20provide%20voice%20over%20services%20for%20my%20project.%20I%20understand%20that%20you%20provide%20voice%20overs%20for%20commercials%2C%20e-learning%2C%20audio%20ebooks%2C%20animations%2C%20movie%20trailers%20and%20documentaries.%20I%20appreciate%20that%20you%20value%20timely%20delivery%20without%20compromising%20on%20quality.%20I%20will%20make%20sure%20to%20check%20your%20Audio%20Demo%20page%20for%20voice%20samples.%20Please%20let%20me%20know%20how%20to%20proceed%20with%20scheduling%20a%20job%20with%20you.%20Thanks!"
+                           target="_blank"
+                           class="nav-item px-12 py-3 hover:bg-gray-100 hover:bg-opacity-10">Hire Me
                 </nuxt-link>
             </nav>
         </div>

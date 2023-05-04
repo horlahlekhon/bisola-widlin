@@ -26,8 +26,15 @@
                         <span>+234 813 489 3527</span>
                         <span>+234 812 575 7578</span>
                         <span class="mt-2 flex flex-row">
-            <img src="/shared/icons/instagram.svg" alt="Instagram" class="mr-2"/>
-            <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
+            <a href="https://www.instagram.com/cantorandtheword/" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/instagram.svg" alt="Instagram" class="mr-2"/>
+            </a>
+            <a href="https://twitter.com/BisolaWidlin" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
+            </a>
+            <a href="https://www.youtube.com/@CANTORANDTHEWORD" target="_blank" class="mr-2">
+              <img src="/shared/icons/icons8-youtube-50.png" alt="Youtube" class="mr-2 h-8"/>
+            </a>
           </span>
                     </div>
                     <div class="bg-black bg-opacity-70 flex flex-row p-4 lg:p-12 h-32 lg:h-52 mb-8 lg:mb-0 w-full lg:w-fit">
