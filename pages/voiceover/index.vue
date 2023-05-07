@@ -61,7 +61,7 @@
                         }}
                     </button>
                     <div id="more">
-                        <ul class="flex flex-col mt-4 mb-4 max-h-64 overflow-y-auto">
+                        <ul class="flex flex-col mt-4 mb-4 h-full overflow-y-auto">
                             <li v-for="audioFile in audioFiles" :key="audioFile.name" class="mr-4 flex flex-col mb-3">
                 <span class="flex flex-row mb-1">
                   <img src="/voiceover/audio-wave.svg" alt="Audio Wave">
@@ -75,6 +75,29 @@
                         </ul>
                     </div>
                 </div>
+                <section class="flex lg:hidden flex-row justify-between items-start mb-2 mt-8">
+                    <div class="flex flex-col items-start text-left mr-8">
+          <span class="flex flex-row bg-amber-50 bg-opacity-50 mb-2">
+            <span class="p-2 bg-amber-50 text-black">Contact Us</span>
+            <span class="text-xs w-[175px]">&nbsp;</span>
+          </span>
+                        <span>Abuja, Abuja FCT, NG</span>
+                        <span>BisolaWidlin@gmail.com</span>
+                        <span>+234 813 489 3527</span>
+                        <span>+234 812 575 7578</span>
+                        <span class="mt-2 flex flex-row">
+           <a href="https://www.instagram.com/bisola_widlin/" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/instagram.svg" alt="Instagram" class="mr-2"/>
+            </a>
+            <a href="https://twitter.com/BisolaWidlin" target="_blank" class="mr-2 mt-1">
+              <img src="/shared/icons/twitter.svg" alt="Twitter" class="mr-2"/>
+            </a>
+            <a href="https://www.youtube.com/@CANTORANDTHEWORD" target="_blank" class="mr-2">
+              <img src="/shared/icons/icons8-youtube-50.png" alt="Youtube" class="mr-2 h-8"/>
+            </a>
+          </span>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -106,6 +129,7 @@ const waveSurferOption = {
     xhr: {
         mode: 'no-cors'
     },
+    responsive: true,
 }
 
 const refWaveSurfer = ref(null);
@@ -167,6 +191,11 @@ function selectAudioFile(audioFile) {
     play();
 }
 
+function scrollDown() {
+    const el = document.querySelector('#more');
+    el.scrollIntoView({behavior: 'smooth'});
+}
+
 function toggleShowMore() {
     const moreEl = document.querySelector('#more');
 
@@ -174,6 +203,7 @@ function toggleShowMore() {
         moreEl.classList.remove('show');
     } else {
         moreEl.classList.add('show');
+        scrollDown();
     }
 
     showMore.value = !showMore.value;
@@ -197,14 +227,18 @@ onMounted(() => {
 }
 
 #more.show {
-    max-height: 500px; /* set the maximum height of the element */
+    max-height: 300px; /* set the maximum height of the element */
+}
+
+@media screen and (max-width: 768px) {
+
+    #more.show {
+        max-height: fit-content; /* set the maximum height of the element */
+    }
 }
 
 main {
     background: #080808;
-    /*clip-path: inset(0 30% 0 0);*/
-    /*width: 70%;*/
-    /*overflow-x: hidden !important;*/
 }
 
 .mail--law {
@@ -270,10 +304,10 @@ main {
 .boxContainer {
     display: flex;
     justify-content: space-between;
-    height: 28px;
+    height: 24px;
     --boxSize: 8px;
     --gutter: 4px;
-    width: calc((var(--boxSize) + var(--gutter)) * 5);
+    width: calc((var(--boxSize) + var(--gutter)) * 3.7);
     background: rgb(255 251 235 / 50%);
 }
 
