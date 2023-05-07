@@ -54,7 +54,7 @@
                 </div>
                 <div class="flex flex-col justify-end overflow-x-hidden">
                     <span class="uppercase text-xs mb-1">Corporate Voiceover</span>
-                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :options="waveSurferOption"/>
+                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :options="waveSurferOption" class="my-2"/>
                     <span class="text-xs mt-1">Welcome to our company</span>
                     <button @click="toggleShowMore" class="uppercase text-xs underline self-start mt-2">View {{
                         showMore ? 'Less' : 'More'
@@ -118,7 +118,7 @@ const props = defineProps({
 });
 
 const waveSurferOption = {
-    height: 80,
+    height: 60,
     progressColor: '#FCEDD0',
     waveColor: '#e7e7e7',
     cursorColor: '#FFDDDD',
