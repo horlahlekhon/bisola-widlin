@@ -147,18 +147,21 @@ export default {
 
 .section-1 {
     background-image: url('/shared/voiceover.png');
-    background-size: contain;
+    background-size: cover;
+    background-position: center bottom 0;
 }
 
 .section-2 {
     background-image: url('/shared/law.png');
     transition: all 0.5s ease-in-out;
+    background-position: center;
 }
 
 .section-3 {
     background-image: url('/shared/ngo.png');
-    background-size: contain;
-    background-position: right;
+    background-size: cover;
+    background-position: center bottom 0;
+
 }
 
 .content {
