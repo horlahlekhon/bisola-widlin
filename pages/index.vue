@@ -18,6 +18,9 @@
                 <h2 class="font-gambetta text-center text-2xl lg:text-5xl font-bold mb-4 lg:mb-24">Law</h2>
             </div>
         </div>
+        <div class="section section-x hidden" ref="sectionX">
+            &nbsp;
+        </div>
         <div class="section section-3" ref="section3" @click="expandSection(3)" @mouseenter="expandSection(3)"
              @mouseleave="resetSections">
             <nuxt-link to="/ngo" class="content" v-if="activeSection===3">
@@ -55,6 +58,7 @@ export default {
             const section1 = this.$refs.section1;
             const section2 = this.$refs.section2;
             const section3 = this.$refs.section3;
+            const sectionX = this.$refs.sectionX;
             if (this.screenSize > 900) {
                 this.activeSection = index;
                 if (index === 1) {
@@ -68,6 +72,7 @@ export default {
                     section2.style.width = '66%';
                     section2.style.height = '100%';
                     section2.style.zIndex = '1';
+                    sectionX.style.display = 'block';
                 } else if (index === 3) {
                     section1.style.display = 'none';
                 }
@@ -85,6 +90,7 @@ export default {
             const section1 = this.$refs.section1;
             const section2 = this.$refs.section2;
             const section3 = this.$refs.section3;
+            const sectionX = this.$refs.sectionX;
             section1.style.display = 'flex';
             section2.style.display = 'flex';
             section2.style.position = 'relative';
@@ -92,6 +98,7 @@ export default {
             section2.style.right = 'auto';
             section2.style.left = 'auto';
             section3.style.display = 'flex';
+            sectionX.style.display = 'none';
             this.activeSection = null;
         }
     }
@@ -160,7 +167,7 @@ export default {
 .section-3 {
     background-image: url('/shared/ngo.png');
     background-size: cover;
-    background-position: center bottom 0;
+    /*background-position: center bottom 0;*/
 
 }
 
