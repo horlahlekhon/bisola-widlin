@@ -22,7 +22,7 @@
                         </p>
                     </div>
                     <div class="w-2/5 hidden lg:flex flex-row justify-end m-4">
-                        <img src="/voiceover/hero.png" alt="Happy Children" class="w-full ml-auto max-w-[400px]">
+                        <img src="https://d2k93i6n4e2lyp.cloudfront.net/voiceover/hero.png" alt="Happy Children" class="w-full ml-auto max-w-[400px]">
                     </div>
                 </section>
                 <div class="border-b  border-opacity-10 pb-8 text-3xl lg:text-4xl font-sora">
@@ -157,7 +157,7 @@ export default {
 <style scoped>
 .main {
     position: relative;
-    background: rgba(0, 7, 12, 0.58) url("/voiceover/background.svg") no-repeat center;
+    background: rgba(0, 7, 12, 0.58) url("https://d2k93i6n4e2lyp.cloudfront.net/voiceover/background.svg") no-repeat center;
     background-size: contain;
     /*backdrop-filter: drop-shadow(0 0 0.75rem #000000);*/
     background-blend-mode: overlay;

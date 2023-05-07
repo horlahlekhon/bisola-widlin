@@ -94,7 +94,7 @@ main {
 .mail--law {
     background-color: #1e1e1e;
     min-height: 100vh;
-    background-image: url("/law/background.webp");
+    background-image: url("https://d2k93i6n4e2lyp.cloudfront.net/law/background.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -153,19 +153,19 @@ export default {
 }
 
 .section-1 {
-    background-image: url('/shared/voiceover.png');
+    background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/voiceover.png');
     background-size: cover;
     background-position: center bottom 0;
 }
 
 .section-2 {
-    background-image: url('/shared/law.png');
+    background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/law.png');
     transition: all 0.5s ease-in-out;
     background-position: center;
 }
 
 .section-3 {
-    background-image: url('/shared/ngo.png');
+    background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/ngo.png');
     background-size: cover;
     /*background-position: center bottom 0;*/
 

@@ -137,32 +137,32 @@ const refWaveSurfer = ref(null);
 const audioFiles = [
     {
         name: `The Voice of Bisola`,
-        src: `/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
+        src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
         date: 'Tue, 01 May 2023'
     },
     {
         name: `The Book of Jonah`,
-        src: `/voiceover/audio/THE BOOK OF JONAH.mp3`,
+        src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE BOOK OF JONAH.mp3`,
         date: 'Tue, 01 May 2023'
     },
     {
         name: 'Intro',
-        src: '/voiceover/audio/intro.mov',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/intro.mov',
         date: 'Tue, 01 May 2023'
     },
     {
         name: 'Outro',
-        src: '/voiceover/audio/outro.mov',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/outro.mov',
         date: 'Tue, 01 May 2023'
     },
     {
         name: 'Different Voices',
-        src: '/voiceover/audio/different voices.mov',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/different voices.mov',
         date: 'Tue, 01 May 2023'
     },
     {
         name: 'Why choose us',
-        src: '/voiceover/audio/why choose us.mov',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/why choose us.mov',
         date: 'Tue, 01 May 2023'
     }
 ]
@@ -244,7 +244,7 @@ main {
 .mail--law {
     background-color: #1e1e1e;
     min-height: 100vh;
-    background-image: url("/voiceover/background2.svg");
+    background-image: url("https://d2k93i6n4e2lyp.cloudfront.net/voiceover/background2.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
