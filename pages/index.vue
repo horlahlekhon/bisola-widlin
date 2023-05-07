@@ -182,16 +182,22 @@ export default {
 
     .section-1 {
         background-image: url('/shared/voiceover-mob.png');
+        background-position: center;
+        background-size: cover;
     }
 
     .section-2 {
         background-image: url('/shared/law-mob.png');
         background-color: #373636;
+        background-position: center;
+        background-size: cover;
     }
 
     .section-3 {
         background-image: url('/shared/ngo-mob.png');
         background-color: #2f2f2f;
+        background-position: center;
+        background-size: cover;
     }
 
     .section:hover {

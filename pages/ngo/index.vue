@@ -18,8 +18,8 @@
                 <section class="flex flex-col flex-col-reverse lg:flex-row justify-start items-start">
                     <div class="flex flex-col items-start text-left mr-0  lg:mr-8 w-full lg:w-fit mb-8 lg:mb-0">
           <span class="flex flex-row bg-green-700 bg-opacity-50 w-full">
-            <span class="p-2 bg-green-700 w-fit">Contact Us</span>
-            <span class="text-xs w-full lg:w-[175px]">&nbsp;</span>
+            <span class="p-2 bg-green-700 w-1/3 lg:w-fit">Contact Us</span>
+            <span class="text-xs w-2/3 lg:w-[175px]">&nbsp;</span>
           </span>
                         <span>Abuja, Abuja FCT, NG</span>
                         <span>BisolaWidlin@gmail.com</span>
