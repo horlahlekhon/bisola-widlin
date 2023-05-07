@@ -1,6 +1,6 @@
 <template>
   <div ref="wavesurferMain"></div>
-  <div ref="waveTimeline"></div>
+  <div ref="waveTimeline" class="timeline"></div>
 </template>
 
 <script setup>
@@ -66,5 +66,8 @@ defineExpose({
 <style lang="css" scoped>
 div {
   position: relative;
+}
+.timeline{
+    display: none !important;
 }
 </style>
