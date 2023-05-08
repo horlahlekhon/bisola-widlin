@@ -54,7 +54,7 @@
                 </div>
                 <div class="flex flex-col justify-end overflow-x-hidden">
                     <span class="uppercase text-xs mb-1">Corporate Voiceover</span>
-                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :peaks-data="selectedAudioFile.peaksData"
+                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src"
                               :options="waveSurferOption" class="my-2"/>
                     <span class="text-xs mt-1">Welcome to our company</span>
                     <button @click="toggleShowMore" class="uppercase text-xs underline self-start mt-2">View {{
@@ -107,6 +107,7 @@
 <script setup>
 import Navbar from "~/pages/voiceover/components/navbar.vue";
 import WaveSurf from "~/pages/voiceover/components/WaveSurf.vue";
+import {a1, a2, a3, a4, a5, a6} from './peaks'
 
 const showMore = ref(false);
 
@@ -140,33 +141,37 @@ const audioFiles = [
         name: `The Voice of Bisola`,
         src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
         date: 'Tue, 01 May 2023',
-        peaksData: '/demo.json'
+        peaksData: a1
     },
     {
         name: `The Book of Jonah`,
         src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE BOOK OF JONAH.mp3`,
         date: 'Tue, 01 May 2023',
-        peaksData: '/demo.json'
+        peaksData: a2
     },
     {
         name: 'Intro',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/intro.mov',
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: a3
     },
     {
         name: 'Outro',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/outro.mov',
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: a4
     },
     {
         name: 'Different Voices',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/different voices.mov',
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: a6
     },
     {
         name: 'Why choose us',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/why chose us.mov',
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: a5
     }
 ]
 
@@ -190,8 +195,7 @@ function selectAudioFile(audioFile) {
     }
     selectedAudioFile = audioFile;
     refWaveSurfer.value.waveSurfer.load(selectedAudioFile.src, selectedAudioFile.peaksData);
-    refWaveSurfer.value.waveSurfer.setPeaks([0, 1, 2, 3, 4, 5], 5);
-    refWaveSurfer.value.waveSurfer.drawBuffer();
+    // refWaveSurfer.value.waveSurfer.drawBuffer();
     isPlaying.value = false;
     play();
 }
@@ -217,6 +221,7 @@ function toggleShowMore() {
 //after view is initialized play the audio
 onMounted(() => {
     setTimeout(() => {
+        refWaveSurfer.value.waveSurfer.load(selectedAudioFile.src, selectedAudioFile.peaksData);
         refWaveSurfer.value.waveSurfer.play();
         isPlaying.value = true;
     }, 1000);
