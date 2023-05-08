@@ -167,8 +167,7 @@ export default {
 .section-3 {
     background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/ngo.png');
     background-size: cover;
-    /*background-position: center bottom 0;*/
-
+    background-position: center bottom 0;
 }
 
 .content {
@@ -191,20 +190,20 @@ export default {
     }
 
     .section-1 {
-        background-image: url('/shared/voiceover-mob.png');
+        background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/voiceover-mob.png');
         background-position: center;
         background-size: cover;
     }
 
     .section-2 {
-        background-image: url('/shared/law-mob.png');
+        background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/law-mob.png');
         background-color: #373636;
         background-position: center;
         background-size: cover;
     }
 
     .section-3 {
-        background-image: url('/shared/ngo-mob.png');
+        background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/ngo-mob.png');
         background-color: #2f2f2f;
         background-position: center;
         background-size: cover;

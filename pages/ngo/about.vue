@@ -56,7 +56,7 @@ export default {
 <style scoped>
 .main {
     position: relative;
-    background: #1e1e1e url("/ngo/background2.svg") no-repeat center;
+    background: #1e1e1e url("/ngo/background2.webp") no-repeat center;
     background-size: cover;
     backdrop-filter: drop-shadow(0 0 0.75rem #000000);
     background-blend-mode: overlay;

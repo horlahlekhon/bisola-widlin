@@ -54,7 +54,8 @@
                 </div>
                 <div class="flex flex-col justify-end overflow-x-hidden">
                     <span class="uppercase text-xs mb-1">Corporate Voiceover</span>
-                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :options="waveSurferOption" class="my-2"/>
+                    <WaveSurf ref="refWaveSurfer" :src="selectedAudioFile.src" :peaks-data="selectedAudioFile.peaksData"
+                              :options="waveSurferOption" class="my-2"/>
                     <span class="text-xs mt-1">Welcome to our company</span>
                     <button @click="toggleShowMore" class="uppercase text-xs underline self-start mt-2">View {{
                         showMore ? 'Less' : 'More'
@@ -138,12 +139,14 @@ const audioFiles = [
     {
         name: `The Voice of Bisola`,
         src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: '/demo.json'
     },
     {
         name: `The Book of Jonah`,
         src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE BOOK OF JONAH.mp3`,
-        date: 'Tue, 01 May 2023'
+        date: 'Tue, 01 May 2023',
+        peaksData: '/demo.json'
     },
     {
         name: 'Intro',
@@ -162,7 +165,7 @@ const audioFiles = [
     },
     {
         name: 'Why choose us',
-        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/why choose us.mov',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/why chose us.mov',
         date: 'Tue, 01 May 2023'
     }
 ]
@@ -186,7 +189,9 @@ function selectAudioFile(audioFile) {
         return;
     }
     selectedAudioFile = audioFile;
-    refWaveSurfer.value.waveSurfer.load(selectedAudioFile.src);
+    refWaveSurfer.value.waveSurfer.load(selectedAudioFile.src, selectedAudioFile.peaksData);
+    refWaveSurfer.value.waveSurfer.setPeaks([0, 1, 2, 3, 4, 5], 5);
+    refWaveSurfer.value.waveSurfer.drawBuffer();
     isPlaying.value = false;
     play();
 }

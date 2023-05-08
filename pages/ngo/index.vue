@@ -74,7 +74,7 @@ main {
 .mail--law {
     background-color: #1e1e1e;
     min-height: 100vh;
-    background-image: url("/ngo/background.svg");
+    background-image: url("/ngo/background.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
