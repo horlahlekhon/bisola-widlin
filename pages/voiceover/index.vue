@@ -138,10 +138,10 @@ const refWaveSurfer = ref(null);
 
 const audioFiles = [
     {
-        name: `The Voice of Bisola`,
-        src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
+        name: 'Intro',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/intro.mov',
         date: 'Tue, 01 May 2023',
-        peaksData: a1
+        peaksData: a3
     },
     {
         name: `The Book of Jonah`,
@@ -150,17 +150,12 @@ const audioFiles = [
         peaksData: a2
     },
     {
-        name: 'Intro',
-        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/intro.mov',
+        name: `The Voice of Bisola`,
+        src: `https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/THE VOICE OF BISOLA WIDLIN.mp3`,
         date: 'Tue, 01 May 2023',
-        peaksData: a3
+        peaksData: a1
     },
-    {
-        name: 'Outro',
-        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/outro.mov',
-        date: 'Tue, 01 May 2023',
-        peaksData: a4
-    },
+    
     {
         name: 'Different Voices',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/different voices.mov',
@@ -172,7 +167,12 @@ const audioFiles = [
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/why chose us.mov',
         date: 'Tue, 01 May 2023',
         peaksData: a5
-    }
+    },
+    {
+        name: 'Outro',
+        src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/outro.mov',
+        date: 'Tue, 01 May 2023'
+    },
 ]
 
 let selectedAudioFile = audioFiles[0];
