@@ -155,7 +155,7 @@ const audioFiles = [
         date: 'Tue, 01 May 2023',
         peaksData: a1
     },
-    
+
     {
         name: 'Different Voices',
         src: 'https://d2k93i6n4e2lyp.cloudfront.net/voiceover/audio/different voices.mov',
@@ -225,6 +225,9 @@ onMounted(() => {
         refWaveSurfer.value.waveSurfer.play();
         isPlaying.value = true;
     }, 1000);
+    setTimeout(() => {
+        isPlaying.value = false;
+    }, 17000);
 })
 
 </script>
