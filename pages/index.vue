@@ -190,7 +190,7 @@ export default {
     }
 
     .section-1 {
-        background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/voiceover-mob.png');
+        background-image: url('/shared/voiceover-colored-mob.webp');
         background-position: center;
         background-size: cover;
     }
@@ -203,7 +203,7 @@ export default {
     }
 
     .section-3 {
-        background-image: url('https://d2k93i6n4e2lyp.cloudfront.net/shared/ngo-mob.png');
+        background-image: url('/shared/ngo-colored-mob.webp');
         background-color: #2f2f2f;
         background-position: center;
         background-size: cover;
